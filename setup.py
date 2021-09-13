@@ -51,8 +51,9 @@ def gen_target_shell():
         # 变成 docker.io/k8s-gcr-io---sig-storage/csi-attacher:v3.2.1
         middle_ctr_name = middle_ctr_name[middle_ctr_name.rfind(":") + 1:]
         middle_ctr_name_part_list = middle_ctr_name.split("---")
-        middle_ctr_name = middle_ctr_name_part_list[0] + "---" + middle_ctr_name_part_list[1] + "/"
-        middle_ctr_name += middle_ctr_name_part_list[2] + ":"
+        middle_ctr_name = middle_ctr_name_part_list[0].replace("--", "-") + "-" + middle_ctr_name_part_list[1].replace(
+            "--", "-") + "/"
+        middle_ctr_name += middle_ctr_name_part_list[2].replace("--", "-") + ":"
         middle_ctr_name += middle_ctr_name_part_list[3].replace("--", ".")
         return target_domain + "/" + middle_ctr_name
 
