@@ -1,0 +1,11 @@
+source:
+  - k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.2.0
+middle:
+  domain: docker.io
+  username: 1
+  password: "1"
+  repo_prefix: tanshilindocker/container-image-porter
+target:
+  domain: 1
+  username: 1
+  password: "1"
